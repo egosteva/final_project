@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+ //   id 'io.freefair.lombok' version '8.0.1'
+    id 'io.qameta.allure' version '2.11.0'
 }
 
 group 'com.github.egosteva'
@@ -9,11 +11,46 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+compileTestJava {
+    options.encoding = 'UTF-8'
 }
 
-test {
+allure {
+    report {
+        version.set("2.21.0")
+    }
+    adapter {
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.21.0")
+            }
+        }
+    }
+}
+
+dependencies {
+    testImplementation(
+            'com.codeborne:selenide:6.13.0',
+            'io.qameta.allure:allure-selenide:2.21.0',
+            'io.rest-assured:rest-assured:5.3.0',
+            'io.rest-assured:json-schema-validator:5.3.0',
+            'org.junit.jupiter:junit-jupiter:5.9.2',
+            'org.assertj:assertj-core:3.24.2',
+            'io.qameta.allure:allure-rest-assured:2.21.0',
+            'com.github.javafaker:javafaker:1.0.2',
+            'org.aeonbits.owner:owner:1.0.12',
+            'org.slf4j:slf4j-simple:2.0.7')
+}
+
+tasks.withType(Test) {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
 }
