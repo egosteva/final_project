@@ -56,4 +56,27 @@ public class MainPageTests extends TestBase {
         $("[placeholder='Поиск']").sendKeys(searchWord);
         $(".SearchPage_searchList__5Azac").shouldHave(text(searchWord));
     }
+
+    @Test
+    void checkSectionProjectsTest() {
+        List<String> projectGroups = List.of("Соцсети", "Медиа и развлечения", "Образование", "Продуктивность",
+                "Магазин приложений", "Игры", "Устройства", "Мессенджеры", "Благотворительность", "Товары и услуги", "Экосистемные сервисы");
+
+        $(withTagAndText("a", "Проекты")).click();
+        webdriver().shouldHave(currentFrameUrl(baseUrl + "/ru/projects/"));
+        $(".PageHeader_pageHeader__content__RQBGx").shouldHave(text("Проекты"));
+        //      $$("ul.AdaptiveTabs_tabsList__MdFef li").findBy(text("Соцсети")).shouldBe(visible);
+        $$(".AdaptiveTabs_tabsList__MdFef .AdaptiveTabs_tabsListElement__RWaZI").shouldHave(texts(projectGroups));
+        $("#social").shouldHave(text("Соцсети"));
+        $("#entertainment").shouldHave(text("Медиа и развлечения"));
+        $("#education").shouldHave(text("Образование"));
+        $("#productivity").shouldHave(text("Продуктивность"));
+        $("#app_store").shouldHave(text("Магазин приложений"));
+        $("#games").shouldHave(text("Игры"));
+        $("#devices").shouldHave(text("Устройства"));
+        $("#messengers").shouldHave(text("Мессенджеры"));
+        $("#social_services").shouldHave(text("Благотворительность"));
+        $("#goods").shouldHave(text("Товары и услуги"));
+        $("#ecosystem").shouldHave(text("Экосистемные сервисы"));
+    }
 }
