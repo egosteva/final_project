@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withTagAndText;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverConditions.currentFrameUrl;
 
 
 public class MainPageTests extends TestBase {
@@ -43,5 +44,16 @@ public class MainPageTests extends TestBase {
         $(withTagAndText("a", "Что такое VK")).shouldBe(visible);
         $(withTagAndText("a", "Образование")).shouldBe(visible);
         $(withTagAndText("a", "Контакты")).shouldBe(visible);
+    }
+
+    @Test
+    void checkSearchResultsTest() {
+        String searchWord = "java";
+
+        $(".header-icon-search").click();
+        webdriver().shouldHave(currentFrameUrl(baseUrl + "/ru/search/"));
+        $("[placeholder='Поиск']").shouldBe(visible);
+        $("[placeholder='Поиск']").sendKeys(searchWord);
+        $(".SearchPage_searchList__5Azac").shouldHave(text(searchWord));
     }
 }
