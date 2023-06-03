@@ -47,6 +47,14 @@ public class MainPageTests extends TestBase {
     }
 
     @Test
+    void checkMoscowOfficeIsAvailableTest(){
+        $$(".header__menu-list .header__menu-item").findBy(text("О компании")).hover();
+        $(withTagAndText("a", "Контакты")).click();
+        webdriver().shouldHave(currentFrameUrl(baseUrl + "/ru/company/contacts/"));
+        $(".contacts__list").shouldHave(text("Москва"));
+    }
+
+    @Test
     void checkSearchResultsTest() {
         String searchWord = "java";
 
@@ -65,7 +73,6 @@ public class MainPageTests extends TestBase {
         $(withTagAndText("a", "Проекты")).click();
         webdriver().shouldHave(currentFrameUrl(baseUrl + "/ru/projects/"));
         $(".PageHeader_pageHeader__content__RQBGx").shouldHave(text("Проекты"));
-        //      $$("ul.AdaptiveTabs_tabsList__MdFef li").findBy(text("Соцсети")).shouldBe(visible);
         $$(".AdaptiveTabs_tabsList__MdFef .AdaptiveTabs_tabsListElement__RWaZI").shouldHave(texts(projectGroups));
         $("#social").shouldHave(text("Соцсети"));
         $("#entertainment").shouldHave(text("Медиа и развлечения"));
