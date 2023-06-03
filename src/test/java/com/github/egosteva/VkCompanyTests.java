@@ -15,7 +15,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverConditions.currentFrameUrl;
 
 
-public class MainPageTests extends TestBase {
+public class VkCompanyTests extends TestBase {
     @BeforeEach
     public void openMainPage() {
         open(baseUrl);
