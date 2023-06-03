@@ -1,4 +1,4 @@
-package com.github.egosteva;
+package com.github.egosteva.tests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
