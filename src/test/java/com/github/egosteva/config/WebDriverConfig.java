@@ -19,6 +19,7 @@ public interface WebDriverConfig extends Config {
     String getBrowserSize();
 
     @Key("baseUrl")
+    @DefaultValue("https://vk.company")
     String getBaseUrl();
 
     @Key("isRemote")

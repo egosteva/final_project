@@ -13,9 +13,8 @@ import static com.github.egosteva.config.WebDriverProvider.config;
 
 public class TestBase {
     @BeforeAll
-    static void beforeAll() {
-        Configuration.browserSize = "1920x1080";
-        Configuration.baseUrl = "https://vk.company";
+    static void setUp() {
+        config();
     }
 
     @BeforeEach
@@ -26,7 +25,7 @@ public class TestBase {
     @AfterEach
     void addAttachments() {
 
-        Attach.screenshotAs("Last step screenshot");
+        Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
         if (config.isRemote()) {
