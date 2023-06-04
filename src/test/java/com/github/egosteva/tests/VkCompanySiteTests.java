@@ -12,8 +12,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Configuration.baseUrl;
-import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 @Story("Проверка работы сайта VK company")
@@ -30,7 +28,7 @@ public class VkCompanySiteTests extends TestBase {
     @BeforeEach
     public void openMainPage() {
         step("Открыть главную страницу", () ->
-                open(baseUrl));
+                mainPage.openMainPageWithRuAlias());
     }
 
     @Test

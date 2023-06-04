@@ -2,18 +2,20 @@ package com.github.egosteva.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import com.github.egosteva.tests.TestBase;
 
 import java.util.List;
 
 import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withTagAndText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.*;
 
-public class MainPage {
+public class MainPage extends TestBase {
+    private final String RU_ALIAS = "/ru";
     private final List<String> EN_HEADER_ITEMS = List.of("About us", "Our projects", "For business", "For media", "Investor relations", "ESG");
     private final List<String> RU_HEADER_ITEMS = List.of("О компании", "Проекты", "Для бизнеса", "Карьера", "Прессе", "Инвесторам", "ESG", "События");
     private final SelenideElement
@@ -26,6 +28,12 @@ public class MainPage {
             contactsTab = $(withTagAndText("a", "Контакты")),
             searchIcon = $(".header-icon-search");
     private final ElementsCollection headerMenuItems = $$(".header__menu-list .header__menu-item");
+
+    public MainPage openMainPageWithRuAlias() {
+        open(baseUrl + RU_ALIAS);
+
+        return this;
+    }
 
     public MainPage checkCompanyLogo() {
         companyLogo.shouldBe(visible);
