@@ -87,7 +87,7 @@ public class MainPage {
         return this;
     }
 
-    public MainPage openSearchForm() {
+    public MainPage clickSearchIcon() {
         searchIcon.click();
 
         return this;
