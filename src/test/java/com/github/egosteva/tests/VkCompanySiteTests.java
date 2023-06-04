@@ -18,9 +18,9 @@ import static io.qameta.allure.Allure.step;
 
 @Story("Проверка работы сайта VK company")
 @Owner("egosteva")
-@Feature("UI тесты на проверку содержания разделов сайта")
+@Feature("UI тесты на проверку содержания разделов сайта VK company")
 @DisplayName("Проверка содержания разделов сайта")
-@Tag("ui_test")
+@Tag("ui_tests")
 public class VkCompanySiteTests extends TestBase {
     MainPage mainPage = new MainPage();
     ContactsPage contactsPage = new ContactsPage();
@@ -35,6 +35,7 @@ public class VkCompanySiteTests extends TestBase {
 
     @Test
     @DisplayName("На главной странице отображается логотип компании")
+    @Tag("main_page")
     void logoShouldBeVisibleTest() {
         step("Проверить отображение логотипа компании", () ->
                 mainPage.checkCompanyLogo());
@@ -42,6 +43,7 @@ public class VkCompanySiteTests extends TestBase {
 
     @Test
     @DisplayName("Хедер содержит корректные разделы при переключении языка")
+    @Tag("main_page")
     void headerShouldContainItemsTest() {
         step("Проверить наличие разделов в хедере", () ->
                 mainPage.checkHeaderItemsInRussian());
@@ -57,6 +59,7 @@ public class VkCompanySiteTests extends TestBase {
 
     @Test
     @DisplayName("Проверка содержания всплывающего окна 'О компании'")
+    @Tag("main_page")
     void checkHoverAboutCompanyContentTest() {
         step("Навести курсор на название раздела 'О компании'", () ->
                 mainPage.openAboutCompanyHover());
@@ -71,6 +74,7 @@ public class VkCompanySiteTests extends TestBase {
 
     @Test
     @DisplayName("Проверка наличия локации 'Москва' в списке офисов")
+    @Tag("contacts")
     void checkOfficeLocationTest() {
         String officeLocation = "Москва";
 
@@ -86,6 +90,7 @@ public class VkCompanySiteTests extends TestBase {
 
     @Test
     @DisplayName("Результат поиска содержит текст поискового запроса")
+    @Tag("search")
     void checkSearchResultsTest() {
         String searchText = "java";
 
@@ -101,6 +106,7 @@ public class VkCompanySiteTests extends TestBase {
 
     @Test
     @DisplayName("Проверка содержания раздела 'Проекты'")
+    @Tag("projects_page")
     void checkProjectsSectionContentTest() {
         step("Кликнуть на радел 'Проекты'", () ->
                 mainPage.openProjectsPageLink());
