@@ -4,6 +4,7 @@ import com.github.egosteva.pages.ContactsPage;
 import com.github.egosteva.pages.MainPage;
 import com.github.egosteva.pages.ProjectsPage;
 import com.github.egosteva.pages.SearchPage;
+import com.github.egosteva.pages.components.HeaderComponent;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
@@ -22,6 +23,7 @@ import static io.qameta.allure.Allure.step;
 @DisplayName("Проверка содержания разделов сайта")
 public class VkCompanySiteTests extends TestBase {
     MainPage mainPage = new MainPage();
+    HeaderComponent headerComponent = new HeaderComponent();
     ContactsPage contactsPage = new ContactsPage();
     SearchPage searchPage = new SearchPage();
     ProjectsPage projectsPage = new ProjectsPage();
@@ -37,7 +39,7 @@ public class VkCompanySiteTests extends TestBase {
     @Tag("main_page_test")
     void logoShouldBeVisibleTest() {
         step("Проверить отображение логотипа компании", () ->
-                mainPage.checkCompanyLogo());
+                headerComponent.checkCompanyLogo());
     }
 
     @Test
@@ -45,15 +47,15 @@ public class VkCompanySiteTests extends TestBase {
     @Tag("main_page_test")
     void headerShouldContainItemsTest() {
         step("Проверить наличие разделов в хедере", () ->
-                mainPage.checkHeaderItemsInRussian());
+                headerComponent.checkHeaderItemsInRussian());
         step("Переключить язык на английский", () ->
-                mainPage.switchLanguageToEnglish());
+                headerComponent.switchLanguageToEnglish());
         step("Проверить отображение разделов на английском", () ->
-                mainPage.checkHeaderItemsInEnglish());
+                headerComponent.checkHeaderItemsInEnglish());
         step("Переключить язык на русский", () ->
-                mainPage.switchLanguageToRussian());
+                headerComponent.switchLanguageToRussian());
         step("Проверить отображение разделов на русском", () ->
-                mainPage.checkHeaderItemsInRussian());
+                headerComponent.checkHeaderItemsInRussian());
     }
 
     @Test
@@ -61,12 +63,12 @@ public class VkCompanySiteTests extends TestBase {
     @Tag("main_page_test")
     void checkHoverAboutCompanyContentTest() {
         step("Навести курсор на название раздела 'О компании'", () ->
-                mainPage.openAboutCompanyHover());
+                headerComponent.openAboutCompanyHover());
         step("Проверить, что всплывающее окно содержит табы 'Что такое VK', " +
                 "'Образование', 'Контакты'", () -> {
-            mainPage.checkWhatIsVkTabAppears();
-            mainPage.checkEducationTabAppears();
-            mainPage.checkContactsTabAppears();
+            headerComponent.checkWhatIsVkTabAppears();
+            headerComponent.checkEducationTabAppears();
+            headerComponent.checkContactsTabAppears();
         });
     }
 
@@ -76,9 +78,9 @@ public class VkCompanySiteTests extends TestBase {
     @ParameterizedTest(name = "{0}")
     void checkOfficeLocationTest(String officeLocation) {
         step("Навести курсор на название раздела 'О компании'", () ->
-                mainPage.openAboutCompanyHover());
+                headerComponent.openAboutCompanyHover());
         step("Во всплывающем окне нажать таб 'Контакты'", () ->
-                mainPage.openContactsPageLink());
+                headerComponent.openContactsPageLink());
         step("Проверить url страницы 'Контакты'", () ->
                 contactsPage.checkContactsPageUrl());
         step("Проверить, что локация есть в списке офисов", () ->
@@ -92,7 +94,7 @@ public class VkCompanySiteTests extends TestBase {
         String searchText = "java";
 
         step("Кликнуть на иконку 'Поиск'", () ->
-                mainPage.clickSearchIcon());
+                headerComponent.clickSearchIcon());
         step("Проверить url страницы 'Поиск'", () ->
                 searchPage.checkSearchPageUrl());
         step("Ввести текст в поисковую строку", () ->
@@ -106,7 +108,7 @@ public class VkCompanySiteTests extends TestBase {
     @Tag("projects_page_test")
     void checkProjectsSectionContentTest() {
         step("Кликнуть на радел 'Проекты'", () ->
-                mainPage.openProjectsPageLink());
+                headerComponent.openProjectsPageLink());
         step("Проверить url страницы 'Проекты'", () ->
                 projectsPage.checkProjectsPageUrl());
         step("Проверить название хедера", () ->
