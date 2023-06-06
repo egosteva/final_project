@@ -35,19 +35,31 @@ public class VkCompanySiteTests extends TestBase {
     }
 
     @Test
-    @DisplayName("На главной странице отображается логотип компании")
+    @DisplayName("Проверка содержания главной страницы")
     @Tag("main_page_test")
-    void logoShouldBeVisibleTest() {
+    void mainPageContentTest() {
         step("Проверить отображение логотипа компании", () ->
                 headerComponent.checkCompanyLogo());
+        step("Проверить наличие разделов в хедере", () ->
+                headerComponent.checkHeaderItemsInRussian());
+        step("Проверить наличие видео-баннера", () ->
+                mainPage.checkVideoBanner());
+        step("Проверить наличие секции 'Приветствие'", () ->
+                mainPage.checkWelcomeSection());
+        step("Проверить наличие секции 'Проекты'", () ->
+                mainPage.checkProjectsSection());
+        step("Проверить наличие секции 'Статьи'", () ->
+                mainPage.checkPromoSection());
+        step("Проверить наличие секции 'Продукты'", () ->
+                mainPage.checkProductsSection());
+        step("Проверить наличие секции 'Пресс-релизы'", () ->
+                mainPage.checkPressSection());
     }
 
     @Test
-    @DisplayName("Хедер содержит корректные разделы при переключении языка")
+    @DisplayName("Названия разделов корректны при переключении языка")
     @Tag("main_page_test")
     void headerShouldContainItemsTest() {
-        step("Проверить наличие разделов в хедере", () ->
-                headerComponent.checkHeaderItemsInRussian());
         step("Переключить язык на английский", () ->
                 headerComponent.switchLanguageToEnglish());
         step("Проверить отображение разделов на английском", () ->
