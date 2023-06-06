@@ -57,7 +57,7 @@ public class VkCompanySiteTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Названия разделов корректны при переключении языка")
+    @DisplayName("Названия разделов в хедере корректны при переключении языка")
     @Tag("main_page_test")
     void headerShouldContainItemsTest() {
         step("Переключить язык на английский", () ->
