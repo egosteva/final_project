@@ -41,7 +41,6 @@ public class ProjectsPage {
             socialServicesSection = $("#social_services"),
             goodsSection = $("#goods"),
             ecosystemSection = $("#ecosystem");
-
     private final ElementsCollection tabsList = $$(".AdaptiveTabs_tabsList__MdFef .AdaptiveTabs_tabsListElement__RWaZI");
 
     public ProjectsPage checkProjectsPageUrl() {

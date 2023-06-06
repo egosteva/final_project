@@ -62,7 +62,6 @@ public class VkCompanySiteTests extends TestBase {
     void checkHoverAboutCompanyContentTest() {
         step("Навести курсор на название раздела 'О компании'", () ->
                 mainPage.openAboutCompanyHover());
-
         step("Проверить, что всплывающее окно содержит табы 'Что такое VK', " +
                 "'Образование', 'Контакты'", () -> {
             mainPage.checkWhatIsVkTabAppears();
