@@ -1,6 +1,5 @@
 plugins {
     id 'java'
- //   id 'io.freefair.lombok' version '8.0.1'
     id 'io.qameta.allure' version '2.11.0'
 }
 
@@ -33,12 +32,7 @@ dependencies {
     testImplementation(
             'com.codeborne:selenide:6.13.0',
             'io.qameta.allure:allure-selenide:2.21.0',
-            'io.rest-assured:rest-assured:5.3.0',
-            'io.rest-assured:json-schema-validator:5.3.0',
             'org.junit.jupiter:junit-jupiter:5.9.2',
-            'org.assertj:assertj-core:3.24.2',
-            'io.qameta.allure:allure-rest-assured:2.21.0',
-            'com.github.javafaker:javafaker:1.0.2',
             'org.aeonbits.owner:owner:1.0.12',
             'org.slf4j:slf4j-simple:2.0.7')
 }
@@ -55,32 +49,26 @@ tasks.withType(Test) {
     }
 }
 
-task ui_tests(type: Test) {
+task main_page_test(type: Test) {
     useJUnitPlatform {
-        includeTags("ui_tests")
+        includeTags("main_page_test")
     }
 }
 
-task main_page(type: Test) {
+task contacts_test(type: Test) {
     useJUnitPlatform {
-        includeTags("main_page")
+        includeTags("contacts_test")
     }
 }
 
-task contacts(type: Test) {
+task search_test(type: Test) {
     useJUnitPlatform {
-        includeTags("contacts")
+        includeTags("search_test")
     }
 }
 
-task search(type: Test) {
+task projects_page_test(type: Test) {
     useJUnitPlatform {
-        includeTags("search")
-    }
-}
-
-task projects_page(type: Test) {
-    useJUnitPlatform {
-        includeTags("projects_page")
+        includeTags("projects_page_test")
     }
 }
