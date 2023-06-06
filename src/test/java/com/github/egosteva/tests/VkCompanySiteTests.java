@@ -11,6 +11,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static io.qameta.allure.Allure.step;
 
@@ -70,19 +72,18 @@ public class VkCompanySiteTests extends TestBase {
         });
     }
 
-    @Test
-    @DisplayName("Проверка наличия локации 'Москва' в списке офисов")
+    @DisplayName("В списке офисов присутствует локация")
+    @ValueSource(strings = {"Москва", "Санкт-Петербург"})
     @Tag("contacts")
-    void checkOfficeLocationTest() {
-        String officeLocation = "Москва";
-
+    @ParameterizedTest(name = "{0}")
+    void checkOfficeLocationTest(String officeLocation) {
         step("Навести курсор на название раздела 'О компании'", () ->
                 mainPage.openAboutCompanyHover());
         step("Во всплывающем окне нажать таб 'Контакты'", () ->
                 mainPage.openContactsPageLink());
         step("Проверить url страницы 'Контакты'", () ->
                 contactsPage.checkContactsPageUrl());
-        step("Проверить, что локация 'Москва' есть в списке офисов", () ->
+        step("Проверить, что локация есть в списке офисов", () ->
                 contactsPage.checkOfficeLocationIsAvailableInContactsList(officeLocation));
     }
 
