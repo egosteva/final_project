@@ -83,11 +83,11 @@ gradle clean test -Denv=remote
 
 <a href="https://jenkins.autotests.cloud/job/final_project_ui_test/"><img src="media/screenshots/jenkinsMain.jpg" alt="Jenkins"/></a>
 
-Сборка с параметрами позволяет перед запуском задать параметры для сборки.
+Сборка с параметрами
 
 <a href="https://jenkins.autotests.cloud/job/final_project_ui_test/build"><img src="media/screenshots/jenkinsBuildWithParams.jpg" alt="Jenkins"/></a>
 
-Клик по иконкам Allure TestOps и Allure Report позволяет перейти на просмотр страниц с тестовой документацией и отчетов.
+Из Jenkins возмжно перейти в Allure Report и Allure TestOps.
 
 <a id="allure"></a>
 ## <img src="media/logo/Allure_Report.svg" width="25" height="25"/></a> Отчеты в [Allure Report](https://jenkins.autotests.cloud/job/final_project_ui_test/6/allure/)
@@ -109,7 +109,7 @@ gradle clean test -Denv=remote
 <a id="allure-testops"></a>
 ## <img src="media/logo/Allure_TO.svg" width="25" height="25"/></a> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/3317/dashboards)
 
-Интеграция Allure TestOps с Jenkins позволяет запускать несколько выборочных тестов и следить за их выполнением в онлайн формате.
+Интеграция Allure TestOps с Jenkins позволяет следить за выполнением прогона и управлять запуском тест-кейсов.
 
 ### Главная страница
 
