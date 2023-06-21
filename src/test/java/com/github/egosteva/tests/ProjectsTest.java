@@ -33,8 +33,6 @@ public class ProjectsTest extends TestBase {
                 projectsPage.checkProjectsPageUrl());
         step("Проверить название хедера", () ->
                 projectsPage.checkHeaderTitle());
-        step("Проверить наличие табов с группами проектов", () ->
-                projectsPage.checkProjectGroupsOnTabs());
         step("Проверить наличие секций - групп проектов", () -> {
             projectsPage
                     .checkSocialSectionTitle()

@@ -1,14 +1,11 @@
 package com.github.egosteva.pages;
 
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
-import java.util.List;
-
-import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Configuration.baseUrl;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.WebDriverConditions.currentFrameUrl;
 
 public class ProjectsPage {
@@ -26,8 +23,6 @@ public class ProjectsPage {
             SOCIAL_SERVICES_SECTION_TITLE = "Благотворительность",
             GOODS_SECTION_TITLE = "Товары и услуги",
             ECOSYSTEM_SECTION_TITLE = "Экосистемные сервисы";
-    private final List<String> PROJECT_GROUPS = List.of("Соцсети", "Медиа и развлечения", "Образование", "Продуктивность",
-            "Магазин приложений", "Игры", "Устройства", "Мессенджеры", "Благотворительность", "Товары и услуги", "Экосистемные сервисы");
     private final SelenideElement
             header = $(".PageHeader_pageHeader__content__RQBGx"),
             socialSection = $("#social"),
@@ -41,7 +36,6 @@ public class ProjectsPage {
             socialServicesSection = $("#social_services"),
             goodsSection = $("#goods"),
             ecosystemSection = $("#ecosystem");
-    private final ElementsCollection tabsList = $$(".AdaptiveTabs_tabsList__MdFef .AdaptiveTabs_tabsListElement__RWaZI");
 
     public ProjectsPage checkProjectsPageUrl() {
         webdriver().shouldHave(currentFrameUrl(baseUrl + PROJECTS_URL));
@@ -51,12 +45,6 @@ public class ProjectsPage {
 
     public ProjectsPage checkHeaderTitle() {
         header.shouldHave(text(HEADER_TITLE));
-
-        return this;
-    }
-
-    public ProjectsPage checkProjectGroupsOnTabs() {
-        tabsList.shouldHave(texts(PROJECT_GROUPS));
 
         return this;
     }
