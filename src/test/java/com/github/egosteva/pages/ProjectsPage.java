@@ -50,77 +50,77 @@ public class ProjectsPage {
     }
 
     public ProjectsPage checkSocialSectionTitle() {
-        socialSection.scrollIntoView(true);
+        socialSection.scrollTo();
         socialSection.shouldHave(text(SOCIAL_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkEntertainmentSectionTitle() {
-        entertainmentSection.scrollIntoView(true);
+        entertainmentSection.scrollTo();
         entertainmentSection.shouldHave(text(ENTERTAINMENT_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkEducationSectionTitle() {
-        educationSection.scrollIntoView(true);
+        educationSection.scrollTo();
         educationSection.shouldHave(text(EDUCATION_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkProductivitySectionSectionTitle() {
-        productivitySection.scrollIntoView(true);
+        productivitySection.scrollTo();
         productivitySection.shouldHave(text(PRODUCTIVITY_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkAppStoreSectionSectionTitle() {
-        appStoreSection.scrollIntoView(true);
+        appStoreSection.scrollTo();
         appStoreSection.shouldHave(text(APP_STORE_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkGamesSectionSectionTitle() {
-        gamesSection.scrollIntoView(true);
+        gamesSection.scrollTo();
         gamesSection.shouldHave(text(GAMES_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkDevicesSectionSectionTitle() {
-        devicesSection.scrollIntoView(true);
+        devicesSection.scrollTo();
         devicesSection.shouldHave(text(DEVICES_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkMessengersSectionSectionTitle() {
-        messengersSection.scrollIntoView(true);
+        messengersSection.scrollTo();
         messengersSection.shouldHave(text(MESSENGERS_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkSocialServicesSectionSectionTitle() {
-        socialServicesSection.scrollIntoView(true);
+        socialServicesSection.scrollTo();
         socialServicesSection.shouldHave(text(SOCIAL_SERVICES_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkGoodsSectionSectionTitle() {
-        goodsSection.scrollIntoView(true);
+        goodsSection.scrollTo();
         goodsSection.shouldHave(text(GOODS_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkEcosystemSectionSectionTitle() {
-        ecosystemSection.scrollIntoView(true);
+        ecosystemSection.scrollTo();
         ecosystemSection.shouldHave(text(ECOSYSTEM_SECTION_TITLE));
 
         return this;

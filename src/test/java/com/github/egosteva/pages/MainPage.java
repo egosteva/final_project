@@ -31,35 +31,35 @@ public class MainPage extends TestBase {
     }
 
     public MainPage checkWelcomeSection() {
-        welcomeSection.scrollIntoView(true);
+        welcomeSection.scrollTo();
         welcomeSection.shouldBe(visible);
 
         return this;
     }
 
     public MainPage checkProjectsSection() {
-        projectsSection.scrollIntoView(true);
+        projectsSection.scrollTo();
         projectsSection.shouldBe(visible);
 
         return this;
     }
 
     public MainPage checkPromoSection() {
-        promoSection.scrollIntoView(true);
+        promoSection.scrollTo();
         promoSection.shouldBe(visible);
 
         return this;
     }
 
     public MainPage checkProductsSection() {
-        productsSection.scrollIntoView(true);
+        productsSection.scrollTo();
         productsSection.shouldBe(visible);
 
         return this;
     }
 
     public MainPage checkPressSection() {
-        pressSection.scrollIntoView(true);
+        pressSection.scrollTo();
         pressSection.shouldBe(visible);
 
         return this;
