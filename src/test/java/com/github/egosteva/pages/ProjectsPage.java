@@ -62,66 +62,77 @@ public class ProjectsPage {
     }
 
     public ProjectsPage checkSocialSectionTitle() {
+        socialSection.scrollIntoView(true);
         socialSection.shouldHave(text(SOCIAL_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkEntertainmentSectionTitle() {
+        entertainmentSection.scrollIntoView(true);
         entertainmentSection.shouldHave(text(ENTERTAINMENT_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkEducationSectionTitle() {
+        educationSection.scrollIntoView(true);
         educationSection.shouldHave(text(EDUCATION_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkProductivitySectionSectionTitle() {
+        productivitySection.scrollIntoView(true);
         productivitySection.shouldHave(text(PRODUCTIVITY_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkAppStoreSectionSectionTitle() {
+        appStoreSection.scrollIntoView(true);
         appStoreSection.shouldHave(text(APP_STORE_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkGamesSectionSectionTitle() {
+        gamesSection.scrollIntoView(true);
         gamesSection.shouldHave(text(GAMES_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkDevicesSectionSectionTitle() {
+        devicesSection.scrollIntoView(true);
         devicesSection.shouldHave(text(DEVICES_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkMessengersSectionSectionTitle() {
+        messengersSection.scrollIntoView(true);
         messengersSection.shouldHave(text(MESSENGERS_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkSocialServicesSectionSectionTitle() {
+        socialServicesSection.scrollIntoView(true);
         socialServicesSection.shouldHave(text(SOCIAL_SERVICES_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkGoodsSectionSectionTitle() {
+        goodsSection.scrollIntoView(true);
         goodsSection.shouldHave(text(GOODS_SECTION_TITLE));
 
         return this;
     }
 
     public ProjectsPage checkEcosystemSectionSectionTitle() {
+        ecosystemSection.scrollIntoView(true);
         ecosystemSection.shouldHave(text(ECOSYSTEM_SECTION_TITLE));
 
         return this;
