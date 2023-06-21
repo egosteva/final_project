@@ -20,12 +20,6 @@ public class SearchPage {
         return this;
     }
 
-    public SearchPage searchPlaceholder() {
-        webdriver().shouldHave(currentFrameUrl(baseUrl + SEARCH_URL));
-
-        return this;
-    }
-
     public SearchPage typeSearchText(String value) {
         searchPlaceholder.sendKeys(value);
 
