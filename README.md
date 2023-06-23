@@ -78,14 +78,16 @@ gradle clean test -Denv=remote
 <a id="jenkins"></a>
 ## <img src="media/logo/Jenkins.svg" width="25" height="25"/></a> Запуск тестов в Jenkins
 
-<a target="_blank" href="https://jenkins.autotests.cloud/job/final_project_ui_test ">Сборка в Jenkins</a>
+<a target="_blank" href="https://jenkins.autotests.cloud/job/Students/job/final_project_ui_test ">Сборка в Jenkins</a>
 <p align="center">
 
-<a href="https://jenkins.autotests.cloud/job/final_project_ui_test/"><img src="media/screenshots/jenkinsMain.jpg" alt="Jenkins"/></a>
+<p align="center">
+<a><img title="Jenkins Job" src="media/screenshots/jenkinsMain.jpg" alt="Jenkins"/></a>
+</p>
 
 Сборка с параметрами
 
-<a href="https://jenkins.autotests.cloud/job/final_project_ui_test/build"><img src="media/screenshots/jenkinsBuildWithParams.jpg" alt="Jenkins"/></a>
+<a href="https://jenkins.autotests.cloud/job/Students/job/final_project_ui_test/build"><img src="media/screenshots/jenkinsBuildWithParams.jpg" alt="Jenkins"/></a>
 
 Из Jenkins возмжно перейти в Allure Report и Allure TestOps.
 
