@@ -92,7 +92,7 @@ gradle clean test -Denv=remote
 Из Jenkins возмжно перейти в Allure Report и Allure TestOps.
 
 <a id="allure"></a>
-## <img src="media/logo/Allure_Report.svg" width="25" height="25"/></a> Отчеты в [Allure Report](https://jenkins.autotests.cloud/job/final_project_ui_test/6/allure/)
+## <img src="media/logo/Allure_Report.svg" width="25" height="25"/></a> Отчеты в [Allure Report](https://jenkins.autotests.cloud/job/Students/job/final_project_ui_test/21/allure/)
 
 ### Главная страница
 
